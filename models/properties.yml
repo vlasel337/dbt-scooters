@@ -7,8 +7,12 @@ sources:
     tables:
       - name: "trips"
         description: "Scooter trips"
+
       - name: "users"
         description: "Users of scooter service"
+
+      - name: "events"
+        description: "User's events in mobile app"
 
 
 models:
@@ -16,23 +20,30 @@ models:
     description: "Модель с причесанными данными о поездках"
     config:
       materialized: "view"
+
   - name: "trips_stat"
     description: "Модель с агрегированными метриками по поездкам за все время"
+
   - name: "trips_stat_daily"
     description: "Модель с агрегированными метриками с детализацией по дням"
     config:
       indexes:
         - columns: ["date"]
+        
   - name: "trips_age_daily"
     description: "Модель с количеством поездок и выручкой по возрастным группам в разрезе дня"
+
   - name: "trips_age_daily_stat"
     description: "Модель с агрегированными данными о выручке и количестве поездок по возрастным группам"
+
   - name: "trips_geom"
     description: "Модель с географическими точками старта и окончани поездок в системе координат WGS 84"
     config:
       materialized: "view"
+
   - name: "parking_start_stat"
     description: "Количество стартов по гексагональным зонам с точностью 500 м"
+
   - name: "parking_finish_stat"
     description: "Количество финишей по гексагональным зонам с точностью 10 м"
 
@@ -40,10 +51,18 @@ models:
     description: "Модель с обогащенными данными поездок по Москве"
     config:
       materialized: "incremental"
+
   - name: "test_inc"
     description: "Тестовая инкрементальная модель"
     config:
       materialized: "incremental"
+
+  - name: "events_clean"
+    description: "Модель с ивентами из мобильного приложения, очищенными от дубликатов"
+    config:
+      materialized: "incremental"
+
+
 
     
     
