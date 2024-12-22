@@ -32,8 +32,20 @@ models:
     config:
       materialized: "view"
   - name: "parking_start_stat"
-    description: "количество стартов по гексагональным зонам с точностью 500 м"
+    description: "Количество стартов по гексагональным зонам с точностью 500 м"
   - name: "parking_finish_stat"
-    description: "количество финишей по гексагональным зонам с точностью 10 м"    
+    description: "Количество финишей по гексагональным зонам с точностью 10 м"
+
+  - name: "trips_users"
+    description: "Модель с обогащенными данными поездок по Москве"
+    config:
+      materialized: "incremental"
+  - name: "test_inc"
+    description: "Тестовая инкрементальная модель"
+    config:
+      materialized: "incremental"
+
+    
+    
 
   
