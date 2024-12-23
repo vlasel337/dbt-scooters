@@ -58,9 +58,19 @@ models:
       materialized: "incremental"
 
   - name: "events_clean"
-    description: "Модель с ивентами из мобильного приложения, очищенными от дубликатов"
+    description: "Инкрементальная модель с ивентами из мобильного приложения, очищенными от дубликатов"
     config:
       materialized: "incremental"
+
+  - name: "revenue_daily"
+    description: "Инкрементальная модель с выручкой агрегированной по дням"
+    config:
+      materialized: "incremental"
+      strategy: "merge"
+      unique_key: [date]
+      on_schema_change: append_new_columns
+      full_refresh: false
+  
 
 
 
