@@ -70,6 +70,14 @@ models:
       unique_key: [date]
       on_schema_change: append_new_columns
       full_refresh: false
+
+  - name: "trips_concurrency"
+    description: "Инкрементальная модель c кумулятивными данными о кол-ве одновременных поездок"
+    config:
+      materialized: "incremental"
+      strategy: "append"
+
+
   
 
 
