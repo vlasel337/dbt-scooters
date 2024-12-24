@@ -77,6 +77,14 @@ models:
       materialized: "incremental"
       strategy: "append"
 
+  - name: "companies"
+    description: "Модель с агрегированными данными по производителям самокатов"
+
+  - name: "companies_trips"
+    description: "Модель с количеством поедок по каждому производителю и средним кол-вом поездок для самокатов каждого производителя"
+  
+
+
 
   
 

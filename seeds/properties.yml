@@ -1,0 +1,7 @@
+version: 2
+
+seeds:
+  - name: "scooters"
+    description: "Словарь с информацией о моделях скутеров и их кол-ве"
+    config:
+      delimiter: ","
