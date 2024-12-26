@@ -10,3 +10,8 @@ seeds:
     description: "Словарь с типами ивентов юзеров в мобильном приложении"
     config:
       delimiter: ","
+
+  - name: "age_groups"
+    description: "Словарь с возрастными группами"
+    config:
+      delimiter: ","

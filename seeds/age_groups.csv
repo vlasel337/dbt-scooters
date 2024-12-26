@@ -1,0 +1,6 @@
+group,age_start,age_end
+Children,0,12
+Teenagers,13,19
+Adults,20,39
+Middle_aged,40,59
+Seniors,60,100
