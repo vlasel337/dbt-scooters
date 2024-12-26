@@ -82,7 +82,17 @@ models:
 
   - name: "companies_trips"
     description: "Модель с количеством поедок по каждому производителю и средним кол-вом поездок для самокатов каждого производителя"
-  
+
+  - name: "events_full"
+    description: "Представление с событиями из мобильного приложения, которые размечены названиями событий"
+    config:
+      materialized: "view"  
+
+  - name: "events_stat"
+    description: "Модель со статистикой количества отказов от поиска"
+    config:
+      materialized: "table"  
+
 
 
 
