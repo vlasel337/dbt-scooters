@@ -96,7 +96,13 @@ models:
   - name: "trips_age_group"
     description: "Модель с выручкой и кол-вом поездок по возрастным группам"
     config:
+      materialized: "table"
+
+  - name: "users_full"
+    description: "Модель с пользователями, в которой для каждого клиента проставлен пол"
+    config:
       materialized: "table"  
+
 
 
 

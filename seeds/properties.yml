@@ -15,3 +15,8 @@ seeds:
     description: "Словарь с возрастными группами"
     config:
       delimiter: ","
+
+  - name: "names_for_sex"
+    description: "Справочник с именами для определения пола"
+    config:
+      delimiter: ","
