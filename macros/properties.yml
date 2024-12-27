@@ -4,10 +4,22 @@ macros:
   - name: "updated_at"
     description: "Колонка с текущим временем, приведенныс к часовому поясу UTC. Нужна для проставления времени обновления таблиц."
 
-macros:
   - name: "date_in_moscow"
     description: "Колонка с текущей датой по московскому часовому поясу"
     arguments:
       - name: "ts_col"
         type: "string"
         description: "Timestamp column in timestamptz format"
+
+  - name: "trips_geom_stat"
+    description: "Шаблон для изготовления таблицы для создания карты"
+    arguments:
+      - name: "trips_table"
+        type: "string"
+        description: "Таблица-источник с данными о поездках и их географическими координатами в нужном формате"
+      - name: "geom_col"
+        type: "string"
+        description: "Столбец с геометрическими координатами точки на карте из базовой модели"
+      - name: "grid"
+        type: "integer"
+        description: "Масштаб гексов на карте"
