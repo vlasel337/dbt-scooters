@@ -12,5 +12,5 @@ select
 	distance as distance_m, 
 	cast(price as decimal(20, 2)) / 100 as price_rub,
 	cast(case when price = 0 and finished_at > started_at then 1 else 0 end as boolean) as is_free,
-	date(started_at) as date
+	{{ date_in_moscow('started_at') }} as "date"
 from {{ source("scooters_raw","trips") }}
