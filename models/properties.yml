@@ -51,16 +51,13 @@ models:
     description: "Модель с обогащенными данными поездок по Москве"
     config:
       materialized: "incremental"
-
-  - name: "test_inc"
-    description: "Тестовая инкрементальная модель"
-    config:
-      materialized: "incremental"
+      on_schema_change: append_new_columns
 
   - name: "events_clean"
     description: "Инкрементальная модель с ивентами из мобильного приложения, очищенными от дубликатов"
     config:
       materialized: "incremental"
+      on_schema_change: append_new_columns
 
   - name: "revenue_daily"
     description: "Инкрементальная модель с выручкой агрегированной по дням"
@@ -76,6 +73,7 @@ models:
     config:
       materialized: "incremental"
       strategy: "append"
+      on_schema_change: append_new_columns
 
   - name: "companies"
     description: "Модель с агрегированными данными по производителям самокатов"

@@ -16,7 +16,8 @@ select
 	t1.is_free,
 	t1.date,
     t2.sex,
-    extract(year from t1.started_at) - extract(year from t2.birth_date) as age
+    extract(year from t1.started_at) - extract(year from t2.birth_date) as age,
+	{{ updated_at() }}
 from {{ ref("trips_prep") }} t1
 left join {{ source("scooters_raw", "users")}} t2 
     ON t1.user_id = t2.id
